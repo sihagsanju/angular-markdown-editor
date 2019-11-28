@@ -7,7 +7,7 @@ A Markdown based editor where anyone can write the markdown text and can preview
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 
-## Languges supported as in code snippet by the editor to preview
+## Languages supported as in code snippet by the editor to preview
 
 - javaScript
 - TypeScript

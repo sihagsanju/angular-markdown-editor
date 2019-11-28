@@ -24,9 +24,61 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/bootstrap-markdown/css/bootstrap-markdown.min.css",
+              "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
+              "node_modules/prismjs/themes/prism.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+        "node_modules/jquery/dist/jquery.js",
+        "node_modules/bootstrap-markdown/js/bootstrap-markdown.js",
+        "node_modules/prismjs/prism.js",
+        "node_modules/prismjs/components/prism-ada.js",
+        "node_modules/prismjs/components/prism-ada.min.js",
+        "node_modules/prismjs/components/prism-java.js",
+        "node_modules/prismjs/components/prism-java.min.js",
+        "node_modules/prismjs/components/prism-python.js",
+        "node_modules/prismjs/components/prism-python.min.js",
+        "node_modules/prismjs/components/prism-java.js",
+        "node_modules/prismjs/components/prism-java.min.js",
+
+        "node_modules/prismjs/components/prism-regex.js",
+        "node_modules/prismjs/components/prism-regex.min.js",
+
+        "node_modules/prismjs/components/prism-ruby.js",
+        "node_modules/prismjs/components/prism-ruby.min.js",
+        "node_modules/prismjs/components/prism-scala.js",
+        "node_modules/prismjs/components/prism-scala.min.js",
+        "node_modules/prismjs/components/prism-perl.js",
+        "node_modules/prismjs/components/prism-perl.min.js",
+        "node_modules/prismjs/components/prism-pascal.min.js",
+        "node_modules/prismjs/components/prism-pascal.js",
+        "node_modules/prismjs/components/prism-json.js",
+        "node_modules/prismjs/components/prism-json.min.js",
+        "node_modules/prismjs/components/prism-graphql.js",
+        "node_modules/prismjs/components/prism-graphql.min.js",
+        "node_modules/prismjs/components/prism-go.js",
+        "node_modules/prismjs/components/prism-go.min.js",
+        "node_modules/prismjs/components/prism-csharp.js",
+        "node_modules/prismjs/components/prism-csharp.min.js",
+
+        "node_modules/prismjs/components/prism-cpp.js",
+        "node_modules/prismjs/components/prism-cpp.min.js",
+        "node_modules/prismjs/components/prism-c.js",
+        "node_modules/prismjs/components/prism-c.min.js",
+
+        "node_modules/prismjs/components/prism-bash.js",
+        "node_modules/prismjs/components/prism-bash.min.js",
+        "node_modules/prismjs/components/prism-aspnet.js",
+        "node_modules/prismjs/components/prism-aspnet.min.js",
+
+        "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js",
+        "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.min.js",
+        "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js",
+        "node_modules/prismjs/plugins/line-highlight/prism-line-highlight.min.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -15,7 +15,11 @@ export const MARKDOWN_EDITOR_VALUE_ACCESSOR: any = {
 @Component({
   moduleId: 'angulaMarkdownEditor',
   selector: 'angular-markdown-editor',
-  template: '<textarea #markdownEditorElm id="{{textareaId}}" name="{{textareaId}}" data-provide="markdown" rows="{{rows}}"></textarea>',
+  template: `<textarea [style.border-color]="'#ccc'" [style.background] = "'url(http://i.imgur.com/2cOaJ.png)'"
+  [style.padding-left]="'34px'" [style.padding-top]="'10px'"
+  [style.background-attachment]="'local'"
+  [style.background-repeat]="'no-repeat'"
+   #markdownEditorElm id="{{textareaId}}" name="{{textareaId}}" data-provide="markdown" rows="{{rows}}"></textarea>`,
   providers: [MARKDOWN_EDITOR_VALUE_ACCESSOR]
 })
 export class AngularMarkdownEditorComponent implements AfterViewInit {
@@ -26,6 +30,7 @@ export class AngularMarkdownEditorComponent implements AfterViewInit {
   set locale(locale: EditorLocale | EditorLocale[]) {
     this.addLocaleSet(locale);
   }
+
 
   /** Id of the textarea DOM element used by the lib */
   @Input() textareaId: string;
@@ -47,6 +52,7 @@ export class AngularMarkdownEditorComponent implements AfterViewInit {
   }
 
   addLocaleSet(editorLocale: EditorLocale | EditorLocale[]) {
+    console.log('this is addlocal call function', editorLocale);
     if (!editorLocale) {
       return;
     }
@@ -75,16 +81,40 @@ export class AngularMarkdownEditorComponent implements AfterViewInit {
     // however we don't want to override the previous callback, so we will run that one to if exists
     const previousOnChange = options.onChange;
     options.onChange = (e) => {
-      console.log('*******this is the conole inside the ONchange in initializer events******');
+
+      console.log('*******this is the conole inside the ONchange in initializer events******',  options);
 
       this.onModelChange(e && e.getContent && e.getContent());
       if (typeof previousOnChange === 'function') {
+        console.log('this is the inside the if conditoin of previouchange initializer events******', e);
         previousOnChange(e);
       }
     };
 
+    console.log('****this is the bootstrap modal window****', $(`#${this.textareaId}`));
+
     // finally create the editor
     $(`#${this.textareaId}`).markdown(options);
+
+    // const style = document.createElement('style');
+    // style.innerHTML = `
+    // textarea {
+    // background-color: red;
+    // background: url(http://i.imgur.com/2cOaJ.png);
+    // background-attachment: local;
+    // [style.background-attachment="'local'"]
+    // background-repeat: no-repeat;
+    // [style.background-repeat = "'no-repeat'"]
+    // padding-left: 35px;
+    // [style.padding-left="'35px'"]
+    // padding-top: 10px;
+    // [style.padding-top = "'10px'"]
+    // border-color:#ccc;
+    // [style.border-color = "'#ccc'"]
+    // }
+    // `;
+    // document.head.append(style);
+
   }
 
   /**
@@ -138,7 +168,6 @@ export class AngularMarkdownEditorComponent implements AfterViewInit {
 
   /** Dispatch of Custom Event, which by default will bubble & is cancelable */
   private dispatchCustomEvent(eventName: string, data?: any, isBubbling: boolean = true, isCancelable: boolean = true) {
-    console.log('*******this is the conole inside the dipatchCutom events******');
     const eventInit: CustomEventInit = { bubbles: isBubbling, cancelable: isCancelable };
     if (data) {
       eventInit.detail = data;

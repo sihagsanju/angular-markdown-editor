@@ -44,8 +44,9 @@ export class EditorComponent implements OnInit {
       iconlibrary: 'fa',
       savable: false,
       onShow: (e) => this.bsEditorInstance = e,
-      parser: (val) => this.parse(val)
+      parser: (val) => this.parse(val),
     };
+
 
     // put the text completely on the left to avoid extra white spaces
     this.markdownText =
@@ -67,6 +68,7 @@ function hello() {
 
     this.buildForm(this.markdownText);
   }
+
 
   buildForm(markdownText) {
     this.templateForm = this.fb.group({
@@ -98,8 +100,8 @@ function hello() {
   parse(inputValue: string) {
     const markedOutput = this.markdownService.compile(inputValue.trim());
     this.highlight();
-
     return markedOutput;
   }
+
 
 }

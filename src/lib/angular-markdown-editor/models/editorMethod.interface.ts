@@ -1,6 +1,9 @@
 import { EditorOption } from './editorOption.interface';
 
 export interface EditorMethod {
+
+  /** add a toggle button to change the theme */
+
   /** add a list bullet "-" at a given index position */
   addBullet: (index: number) => void;
 
